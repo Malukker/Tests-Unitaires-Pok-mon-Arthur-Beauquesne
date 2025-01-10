@@ -97,7 +97,19 @@ namespace _2023_GC_A2_Partiel_POO.Tests.Level_2
 
             int tempHealth = b.CurrentHealth;
             f.ExecuteTurnUpdated(punch, punch);
-            Assert.That(a.CurrentHealth, Is.EqualTo(tempHealth));
+            Assert.That(b.CurrentHealth, Is.EqualTo(tempHealth));
+            Assert.That(a.CurrentStatus, Is.Null);
+
+            a.ReceiveHealing(1000); 
+            b.ReceiveHealing(1000);
+            f.ExecuteTurnUpdated(sleep, burn);
+            tempHealth = a.CurrentHealth;
+            for (int i = 0; i < 4; i++)
+            {
+                f.ExecuteTurnUpdated(punch, punch);
+            }
+            Assert.That(a.CurrentHealth, Is.EqualTo(tempHealth - 40));
+            Assert.That(a.CurrentStatus, Is.Null);
             Assert.That(b.CurrentStatus, Is.Null);
         }
     }
