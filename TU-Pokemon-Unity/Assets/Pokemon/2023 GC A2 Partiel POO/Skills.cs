@@ -46,4 +46,11 @@ namespace _2023_GC_A2_Partiel_POO.Level_2
     {
         public MagicalGrass() : base(TYPE.GRASS, 70, StatusPotential.SLEEP) { }
     }
+    /// <summary>
+    /// https://r.mtdv.me/watch?v=Yyt-FG9JZh
+    /// </summary>
+    public class TrendInstagram : Skill
+    {
+        public TrendInstagram() : base(TYPE.NORMAL, 20, StatusPotential.CRAZY) { }
+    }
 }

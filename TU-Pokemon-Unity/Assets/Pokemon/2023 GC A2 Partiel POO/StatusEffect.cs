@@ -68,7 +68,7 @@ namespace _2023_GC_A2_Partiel_POO.Level_2
         /// </summary>
         public virtual void EndTurn()
         {
-            throw new NotImplementedException();
+            RemainingTurn--;
         }
     }
 
@@ -87,7 +87,7 @@ namespace _2023_GC_A2_Partiel_POO.Level_2
     /// </summary>
     public class BurnStatus : StatusEffect
     {
-        public BurnStatus() : base(5, 10, true, 0f)
+        public BurnStatus() : base(5, 10, true, 1f)
         {
         }
     }
@@ -97,7 +97,7 @@ namespace _2023_GC_A2_Partiel_POO.Level_2
     /// </summary>
     public class CrazyStatus : StatusEffect
     {
-        public CrazyStatus() : base(1, 0, false, 0.3f)
+        public CrazyStatus() : base(2, 0, false, 0.3f)
         {
         }
     }

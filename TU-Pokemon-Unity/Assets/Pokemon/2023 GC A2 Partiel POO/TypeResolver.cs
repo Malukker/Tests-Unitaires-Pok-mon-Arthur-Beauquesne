@@ -27,7 +27,43 @@ namespace _2023_GC_A2_Partiel_POO.Level_2
         /// </returns>
         public static float GetFactor(TYPE attacker, TYPE receiver)
         {
-            throw new NotImplementedException();
+            switch (receiver)
+            {
+                case TYPE.NORMAL:
+                    return 1f;
+                case TYPE.WATER:
+                    switch (attacker)
+                    {
+                        case TYPE.FIRE:
+                            return 0.8f;
+                        case TYPE.GRASS:
+                            return 1.2f;
+                        default:
+                            return 1f;
+                    }
+                case TYPE.FIRE:
+                    switch (attacker)
+                    {
+                        case TYPE.GRASS:
+                            return 0.8f;
+                        case TYPE.WATER:
+                            return 1.2f;
+                        default:
+                            return 1f;
+                    }
+                case TYPE.GRASS:
+                    switch (attacker)
+                    {
+                        case TYPE.WATER:
+                            return 0.8f;
+                        case TYPE.FIRE:
+                            return 1.2f;
+                        default:
+                            return 1f;
+                    }
+            }
+
+            throw new ArgumentException("Whatever you have done is absolutely delicious, yet unimaginably tangled, spaghetti.");
         }
 
     }
